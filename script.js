@@ -1,3 +1,5 @@
+
+// // Function for random computer choice//
 function getComputerChoice(params) {
     const Choice = Math.floor(Math.random() * 3);
     if (Choice === 0) {
@@ -9,36 +11,112 @@ function getComputerChoice(params) {
     }
 }
 
+
+
+
+
+// Function for 1 round of game//
 function playRound(playerSelection, computerSelection) {
+
+    let result;
     if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        return 'You win scissors beats paper!';
+        result = 'You win scissors beats paper!';
+        playerScore++
+        round++
+        return result;
+        
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        return 'You lose rock beats scissors!';
+        result = 'You lose rock beats scissors!';
+        computerScore++
+        round++
+        return result;
+    
     } else if (playerSelection === 'scissors' && computerSelection === 'scissors' ) {
-        return "It's a tie!";
+        result = "It's a tie!";
+        playerScore++
+        computerScore++
+        round++
+        return result; 
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        return 'You win paper beats rock!';
+        result = 'Paper beats rock you win!';
+        playerScore++
+        round++
+        return result;
+        
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        return 'You lose scissors beats paper!';
+        result = 'You lose Scissors beats paper!';
+        computerScore++
+        round++
+        return result;
+        
     } else if (playerSelection === 'paper' && computerSelection === 'paper') {
-        return "It's a tie!";
+        result = "It's a tie!";
+        playerScore++
+        computerScore++
+        round++
+        return result;
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        return 'You win rock beats scissors!';
-    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        return 'You lose paper beats rock!';
+        result = 'Rock beats scissors you win!'
+        playerScore++
+        round++
+        return result;
+        
+    } else if (computerSelection === 'paper' && playerSelection === 'rock') {
+        result = 'Paper beats rock you lose!';
+        computerScore++
+        round++
+        return result;
+        
     } else if (playerSelection === 'rock' && computerSelection === 'rock') {
-        return "It's a tie!"
+        result = "It's a tie!"; 
+        playerScore++
+        computerScore++
+        round++
+        return result;
+    }  
     }
-    }
 
 
-const computerSelection = getComputerChoice ();
-const userChoice = prompt("Choose Paper, Rock, or Scissors");
-const playerSelection = userChoice.toLowerCase ();
 
-console.log(playerSelection);
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+// let playerSelection = prompt('Choose Paper,Rock, or Scissors').toLowerCase ();
+let computerSelection;
+let computerScore = 0;
+let playerScore = 0;
+let round = 1;
+// console.log(playerSelection);
+// console.log(computerSelection);
+// console.log(playRound(playerSelection, computerSelection));
+
+
+//Function for 5 rounds of Paper, Rock, Scissors//
+function game() {
+while (round <= 5) {
+    let playerSelection = prompt ('Choose Paper,Rock,or Scissors').toLowerCase ();
+    console.log(playerSelection);
+    getComputerChoice ();
+    computerSelection = getComputerChoice ();
+    console.log(computerSelection);
+    console.log(playRound(playerSelection,computerSelection));
+} if (playerScore > computerScore || computerScore < playerScore) {
+    return 'You won!\n' + 'Your Score: ' + playerScore + ' Computer score: ' + computerScore;
+}else if (computerScore > playerScore || playerScore < computerScore) {
+    return 'You lost!\n' + 'Your Score: ' + playerScore + ' Computer score: ' + computerScore;
+} else if (playerScore === computerScore || computerScore === playerScore){
+    return "It's a tie game!\n" + 'Your Score:' + playerScore + ' Computer Score: ' + computerScore;
+}
+}
+
+
+
+console.log(game());
+
+
+
+
+
+
+
+
 
 
 
