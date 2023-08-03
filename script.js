@@ -118,7 +118,7 @@ function playRound(playerSelection, computerSelection) {
         computerScore++
         compScore.textContent = 'Computer Score:' + `${computerScore}`;
         myScore.textContent = 'My score:' + `${playerScore}`;
-        liveScore.textContent = "Great job!"
+        liveScore.textContent = "Oh no!"
         displayCompChoice ('paper');
 
     } else if (playerSelection === 'rock' && computerSelection === 'rock') {
