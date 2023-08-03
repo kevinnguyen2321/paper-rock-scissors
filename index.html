@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paper Rock Scissors Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,27 +17,27 @@
     <div class="content-container">
         <div class="score-container">
             <div class="wise">
-                <p>First to 5 wins.</p>
+                <p>First to 5 wins</p>
                 <p>Choose Wisely</p>
             </div>
+            
             <div class="scores">
                 <p id="my-score">My Score:</p>
                 <p id="comp-score"> Computer Score:</p>
             </div>
+            <div class="game-btns">
+                <div class="game-time"><img id="btn-paper" src="/images/paper.png" alt="paper" width="720px"></div>
+                <div class="game-time"><img id="btn-rock" src="/images/rock.png" alt="rock" width="720px"></div>
+                <div class="game-time"><img id="btn-scissors" src="/images/scissors.png" alt="scissors" width="720px"> </div>
+                <!-- <button class="hidden" id="btn-paper">Paper</button>
+                <button class="hidden" id="btn-rock">Rock</button>
+                <button class="hidden" id="btn-scissors">Scissors</button> -->
+            </div> 
         </div>
 
-        <div class="button-container">
+        <div class="live-container">
             <p id="update" class="live-score"></p>
-            <p>
-                <div class="game-btns">
-                    <button class="hidden" id="btn-paper">Paper</button>
-                    <button class="hidden" id="btn-rock">Rock</button>
-                    <button class="hidden" id="btn-scissors">Scissors</button>
-                </div>
-                <div class="hidden-btn">
-                    <button id="play-again" class="hide">Play Again</button>
-                </div>
-            </p>
+            <div class="hidden-btn"> <button class="hide"  id="play-again" >Play Again</button></div>
         </div>
         
         
@@ -44,3 +47,5 @@
  <script src="script.js"></script>   
 </body>
 </html>
+
+
